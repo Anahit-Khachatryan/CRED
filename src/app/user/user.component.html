@@ -1,0 +1,24 @@
+<!-- <p>{{userData.name}}</p> -->
+<!-- <p>{{userData.name}}</p> -->
+
+<div class="card m-b-30 shadow-lg">
+       
+            <div class="card-body">
+              <h5 class="card-title">{{userData.name}}</h5>
+              <p class="card-text"><small class="text-secondary font-italic">Date of Birth: {{userData.burnYear}}
+            </small></p>
+              <p class="card-text">Email: {{userData.email}} &nbsp;
+            <p class="card-text">Phone: {{userData.phone}} &nbsp;
+
+                <!-- <a href="{{userData.phone}}" class="text-secondary font-italic">See all bio</a> -->
+              </p>
+              <button class="btn btn-primary"(click)="view()">View</button>
+              <button class="btn btn-primary" (click)='editUser()'>Edit</button>
+              <div *ngIf='confirmDelete'>
+                <p>Are you sure want to delete?</p>
+                    <button class="btn btn-danger" (click)="removeUser()">Yes</button>
+                    <button class="btn btn-primary" (click)="confirmDelete=false">No</button>
+              </div>
+              <button *ngIf='!confirmDelete'class="btn btn-danger btn-delete" (click)="confirmDelete=true">Delete</button>
+            </div>
+          </div>

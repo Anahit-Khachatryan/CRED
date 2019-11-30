@@ -1,0 +1,21 @@
+<div class="card shadow-lg">
+    <div class="row no-gutters">
+      <div class="col-md-8">
+        <!-- <app-edit-modal
+          (OSentAuthorNewInfoStep1)=sentAuthorNewInfoStep2($event);
+          [IAuthorOldInfo]="IAuthor"
+        ></app-edit-modal> -->
+        <div class="card-body">
+          <h5 class="card-title">{{user.name}}</h5>
+          <p class="card-text"><small class="text-secondary font-italic">Date of Birth: {{user.burnYear}}
+        </small></p>
+          <p class="card-text">Email: {{user.email}} &nbsp;
+        <p class="card-text">Phone: {{user.phone}} &nbsp;
+
+            <!-- <a href="{{userData.phone}}" class="text-secondary font-italic">See all bio</a> -->
+          </p>
+          <div class="panel-footer">
+            <a class="btn btn-primary" routerLink='/userlist'>Back to list</a>
+            <button class='btn btn-primary pull-right' (click)="viewNextUser()">View Next User</button>
+        </div>  
+        </div>

@@ -1,0 +1,57 @@
+<form #userForm ='ngForm' (ngSubmit)='onSubmit()'>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Edit User</h3>
+    </div>       
+      <div class="panel-body">
+        <div class="form-group">
+        <label for="name">Name</label>
+          <input id ="name" 
+          name="name" 
+          class='form-control'
+          [(ngModel)]='user.name'
+           type="text"
+           required>
+        </div>
+        <div class="form-group">
+          <label for="burnYear">Burn Year</label>
+            <input id ="burnYear"
+             name='burnYear' 
+             [(ngModel)]='user.burnYear'
+             type="text" 
+             class='form-control'
+             required>
+          </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+              <input id ="email"
+               type="text"
+               class='form-control'  
+              name='email'
+              [(ngModel)]='user.email'
+              #email ='ngModel'
+               type='text'
+               required
+               email>
+               <span class='help-block' *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+          </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+            <input id ="phone"
+            type="text" 
+            name='phone'
+            [(ngModel)]='user.phone'
+             type="text"
+              class='form-control'
+              required>
+        </div>
+      </div>
+      <div class='panel-footer'>
+      <button
+      class='btn btn-primary'
+      type='submit'
+      [disabled]='!userForm.valid'>Save</button>
+      </div>
+  </div>
+ </form>
+
